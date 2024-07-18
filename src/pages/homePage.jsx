@@ -5,7 +5,6 @@ import BlogCard from "../components/blogCard";
 import Loader from "../components/loader";
 
 const HomePage = () => {
-  // const API_KEY = "92ebf46bdb464ce1a20beafe8d321570";
   const API_KEY = "7e698c1a4aa1423e8f02efcce14ea5f2";
   const query = "articles";
   const [blogListData, setBlogListData] = useState([]);
