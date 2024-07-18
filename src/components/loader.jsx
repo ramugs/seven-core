@@ -2,7 +2,7 @@ import React from "react";
 
 const Loader = () => {
   return (
-    <div className="border grid h-[80vh] w-full place-items-center overflow-x-scroll rounded-lg lg:overflow-visible">
+    <div className="grid h-[85vh] w-full place-items-center overflow-x-scroll rounded-lg lg:overflow-visible">
       <svg
         className="text-lightGrey animate-spin"
         viewBox="0 0 64 64"

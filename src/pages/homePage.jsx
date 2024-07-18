@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import useAxios from "../hooks/useAxios";
-import errorToast from "../utils/errorToast";
 import "./pages.css";
 import BlogCard from "../components/blogCard";
 import Loader from "../components/loader";
 
 const HomePage = () => {
-  const API_KEY = "92ebf46bdb464ce1a20beafe8d321570";
+  // const API_KEY = "92ebf46bdb464ce1a20beafe8d321570";
+  const API_KEY = "7e698c1a4aa1423e8f02efcce14ea5f2";
   const query = "articles";
   const [blogListData, setBlogListData] = useState([]);
   const [blogListCount, setBlogListCount] = useState(30);
@@ -30,7 +30,6 @@ const HomePage = () => {
       setBlogListData(data?.articles);
       setBlogListCount(data?.totalResults);
     } else if (error?.data?.status === "error") {
-      errorToast(error?.data?.message ?? "Something went wrong");
       setBlogListCount(0);
     }
   }, [data, error]);
@@ -67,7 +66,7 @@ const HomePage = () => {
             <div className="sm:mx-4 mx-2">
               {blogListData?.map((item, index) => (
                 <div className="" key={index}>
-                  <BlogCard item={item} />
+                  <BlogCard item={item} index={index + pageSize * page} />
                 </div>
               ))}
             </div>

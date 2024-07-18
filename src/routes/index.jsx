@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import HomePage from "../pages/homePage";
-import { ToastContainer } from "react-toastify";
+import BlogPage from "../pages/blogPage";
 
 const Index = () => {
   return (
@@ -9,9 +9,9 @@ const Index = () => {
       <Router>
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/:id" element={<BlogPage />} />
         </Routes>
       </Router>
-      <ToastContainer limit={1} />
     </>
   );
 };
